@@ -10,7 +10,7 @@
         display: inline-block;
 
         img {
-            width: 70%;
+            width: 120%;
         }
 
         .ms-logo {
@@ -257,43 +257,9 @@
     }
 
     &.ms-header-primary {
-        background-color: $color-primary;
+        background-image: url("../img/header-bg.svg");
+        border-top: 4px $color-primary solid;
         color: #fff;
-
-        .btn-circle {
-            color: #fff;
-
-            &:before {
-                background-color: #fff;
-            }
-
-            &:hover,
-            &:focus {
-                color: $color-primary;
-            }
-
-            &.no-focus {
-                &:focus {
-                    color: #fff;
-                    &:before {
-                        height: 0px;
-                        width: 0px;
-                        top: 25px;
-                        left: 25px;
-                    }
-                }
-
-                &:hover {
-                    color: $color-primary;
-                    &:before {
-                        height: 50px;
-                        width: 50px;
-                        top: 0px;
-                        left: 0px;
-                    }
-                }
-            }
-        }
 
         .ms-title {
             h1 {

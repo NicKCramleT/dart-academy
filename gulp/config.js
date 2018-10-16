@@ -1,8 +1,8 @@
 module.exports = {
     environment : 'dev',
     concat: true,
-    primaryColor: 'deep-purple',
-    shine: '800',
+    primaryColor: 'purple',
+    shine: '300',
     headerClass: 'ms-header-primary',
     navbarClass: 'ms-navbar-primary',
     navbarMode: false,

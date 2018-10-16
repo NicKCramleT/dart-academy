@@ -1,75 +1,22 @@
+// Header Hero - Variables
+$mdc-sand-hero:   #FFF1CD;
+
 .ms-hero {
     margin-top: -40px;
     padding: 3rem 0 0 0;
 
-    &.ms-hero-black {
-        background-image: url("../img/black_wall.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        //min-height: 400px;
-    }
 
     &.ms-hero-material {
         color: $color-light;
-        background-color: darken($color-primary, 40%);
-        min-height: 450px;
+        background-image: url("../img/cloud-wall-bg.svg");
+        background-color: $mdc-sand-hero;
+        background-repeat: repeat-x;
+        min-height: 500px;
 
         position: relative;
         width: 100%;
         overflow: hidden;
         z-index: 0;
-
-        @keyframes heroBackOne {
-            0% {
-                height: 0%;
-            }
-
-            100% {
-                height: 590%;
-            }
-        }
-
-        @keyframes heroBackTwo {
-            0% {
-                height: 0%;
-            }
-
-            100% {
-                height: 290%;
-            }
-        }
-
-        @keyframes heroBackThree {
-            0% {
-                height: 0%;
-            }
-
-            100% {
-                height: 470%;
-            }
-        }
-
-        &:before {
-                position: absolute;
-                display: block;
-                content: "";
-                background-color: darken($color-primary, 30%);
-                //height: 20%;
-                //width: 20%;
-                height: 590%;
-                width: 75%;
-                bottom: -249%;
-                left: -46%;
-                transform: rotate(-48deg);
-                z-index: 1;
-                box-shadow: 29px -26px 43px -1px rgba(0,0,0,.5);
-                animation-name: heroBackOne;
-                animation-duration: 0.5s;
-                animation-delay: 0.25s;
-                animation-fill-mode: backwards;
-            }
 
         .ms-hero-bg {
             display: block;
@@ -81,46 +28,6 @@
             width: 100%;
             height: 100%;
             z-index: 2;
-
-            &:before {
-                position: absolute;
-                display: block;
-                content: "";
-                background-color: darken($color-primary, 20%);
-                //height: 20%;
-                //width: 20%;
-                height: 290%;
-                width: 71%;
-                bottom: -140%;
-                left: -43%;
-                transform: rotate(-33deg);
-                z-index: 3;
-                box-shadow: 28px 10px 43px -1px rgba(0,0,0,0.5);
-                animation-name: heroBackTwo;
-                animation-duration: 0.5s;
-                animation-delay: 0.5s;
-                animation-fill-mode: backwards;
-            }
-
-            &:after {
-                position: absolute;
-                display: block;
-                content: "";
-                background-color: darken($color-primary, 15%);
-                //height: 20%;
-                //width: 20%;
-                height: 470%;
-                width: 46%;
-                bottom: -232%;
-                right: 0%;
-                transform: rotate(52deg);
-                z-index: 4;
-                box-shadow: -33px -22px 43px -1px rgba(0,0,0,0.53);
-                animation-name: heroBackThree;
-                animation-duration: 0.5s;
-                animation-delay: 0.35s;
-                animation-fill-mode: backwards;
-            }
         }
 
         .container {
@@ -130,50 +37,9 @@
 
         .ms-hero-img {
             padding-left: 0rem;
-            //vertical-align: bottom;
             padding-top: 0rem;
             position: relative;
             margin: 4rem 0 0 4rem;
-
-
-            .carousel {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-
-                .carousel-indicators {
-                    position: absolute;
-                    bottom: 130px;
-                    left: auto;
-                    right: 40px;
-
-                    li {
-                        height: 12px;
-                        width: 12px;
-                        border-radius: 100%;
-                        background-color: $color-dark;
-
-                        &.active {
-                            background-color: $color-primary;
-                        }
-                    }
-                }
-            }
-
-            img {
-            }
-
-            .ms-hero-img-slider {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0px;
-                left: 0px;
-
-            }
         }
 
         .carousel {
@@ -285,7 +151,7 @@
                     font-weight: 200;
                     text-transform: capitalize;
 
-                    strong {
+                    span {
                         font-weight: 300;
                     }
                 }
@@ -316,12 +182,18 @@
                     }
 
                     .ms-list-text {
+                        color: $font-color-title;
                         display: table-cell;
                         vertical-align: middle;
                         font-size: 1.8rem;
                         line-height: 3rem;
                     }
                 }
+            }
+
+            .card {
+                color: $color-info;
+                text-align: center;
             }
         }
     }
@@ -345,30 +217,16 @@
     padding: 6rem 0;
 
     &.wrap-mountain {
-        background-color: $color-dark;
-        color: $color-light-light;
-        background-image: url("../img/back_mountain.jpg");
+        
+        color: $color-dark-dark;
+        background-image: url("../img/cloud-wall-bg.svg");
         background-position: center center;
         background-size: cover;
         position: relative;
         animation: moveBack;
-        animation-duration: 30s;
+        animation-duration: 5s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
-
-        &:after {
-            display: block;
-            content: "";
-            position: absolute;
-            z-index: 0;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: fade-out(darken($color-primary, 28%), 0.2);
-
-        }
 
         .container {
             position: relative;
