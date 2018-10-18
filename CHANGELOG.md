@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+# [0.4.0] - 18-10-2018
+
+### Added
+
+* **countdown**: Modal regressive counter for inauguration added
+* **price**: Price section added
+* **gitignore**: Git ignore file added
+
+### Changed
+
+* **footer**: Footer information modified
+* **discipline**: Discipline modal information modfied
+
+### Remove
+
+* **not.used**: Not used section remove
+
 # [0.3.0] - 15-10-2018
 
 ### Added
