@@ -1,8 +1,4 @@
 $(document).ready(function(){
-
-    hoy = new Date();
-    if(hoy.getTime()< new Date('2018/10/20 10:00:00').getTime())
-        $("#openingModal").modal();
     $('.owl-carousel').owlCarousel({
         loop:true,
         margin:30,

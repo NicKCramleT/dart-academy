@@ -21,6 +21,7 @@ var runSequence =   require('run-sequence').use(gulp);
 var imagemin =      require('gulp-imagemin');
 var changed =       require('gulp-changed');
 var merge =         require('merge-stream');
+var htmlmin =       require('gulp-htmlmin');
 
 const browsersync   = require('browser-sync');
 
@@ -143,6 +144,7 @@ gulp.task('html:dist', function() {
             customBlockTypes: ['gulp/components-menu.js']
         }))
         .pipe(gulpif(config.compress, prettify({indent_size: 2})))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest(path.join(paths.html)))
         .pipe(connect.reload());
 });

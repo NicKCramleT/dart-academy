@@ -1,13 +1,13 @@
 module.exports = {
     environment : 'dev',
     concat: true,
-    primaryColor: 'purple',
-    shine: '300',
+    primaryColor: 'deep-purple',
+    shine: '800',
     headerClass: 'ms-header-primary',
     navbarClass: 'ms-navbar-primary',
     navbarMode: false,
     allColors: false,
-    compress: false,
+    compress: true,
 
     themes : ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey'],
     shines : ['300', '400', '500', '600', '700', '800'],

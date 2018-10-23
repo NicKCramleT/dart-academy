@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+# [0.6.0] - 22-10-2018
+
+### Added
+
+* **html.minify**: Add HTML minify task to improve dist files
+* **seo**: Add .htaccess, robots and sitemap files to improve seo
+
+### Changed
+
+* **theme**: Principal theme changed to apply corporate colors
+
+### Remove
+
+* **not.used**: Not used files remove
+
 # [0.5.0] - 19-10-2018
 
 ### Added

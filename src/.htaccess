@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^dart-academy.cl [NC]
+RewriteRule ^(.*)$ https://www.dart-academy.cl/$1 [R=301,L,QSA]
