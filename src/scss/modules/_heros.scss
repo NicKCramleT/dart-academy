@@ -8,14 +8,13 @@ $mdc-sand-hero:   #FFF1CD;
 
     &.ms-hero-material {
         color: $color-light;
-        background-image: url("../img/cloud-wall-bg.svg");
-        background-color: $mdc-sand-hero;
-        background-repeat: repeat-x;
+        background-image: url("../img/white-wall-bg.svg");
+        background-color: $color-selector;
+        background-repeat: repeat-x repeat-y;
         min-height: 500px;
 
         position: relative;
         width: 100%;
-        overflow: hidden;
         z-index: 0;
 
         .ms-hero-bg {
@@ -36,13 +35,17 @@ $mdc-sand-hero:   #FFF1CD;
         }
 
         .ms-hero-img {
-            padding-left: 0rem;
-            padding-top: 0rem;
-            position: relative;
-            margin: 4rem 0 0 4rem;
+            position: absolute;
+            top: 1%;
         }
 
         .carousel {
+            background-color: #fff;
+
+            header h2 img {
+                height: 100%;
+                width: 100%;
+            }
 
             .carousel-indicators {
                 position: static;
@@ -185,8 +188,13 @@ $mdc-sand-hero:   #FFF1CD;
                         color: $font-color-title;
                         display: table-cell;
                         vertical-align: middle;
-                        font-size: 1.8rem;
+                        font-size: 2.2rem;
                         line-height: 3rem;
+
+                        span {
+                            font-size: 3.2rem;
+                            line-height: 4rem;
+                        }
                     }
                 }
             }
@@ -218,20 +226,34 @@ $mdc-sand-hero:   #FFF1CD;
 
     &.wrap-mountain {
         
-        color: $color-dark-dark;
-        background-image: url("../img/cloud-wall-bg.svg");
+        color: #fff;
+        background-image: url("../img/white-wall-bg.svg");
         background-position: center center;
         background-size: cover;
         position: relative;
         animation: moveBack;
-        animation-duration: 5s;
+        animation-duration: 20s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
 
+        &:after {
+            display: block;
+            content: "";
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: fade-out(darken($dart-purple-C9F, 0.8%), 0.2);
+
+        }
         .container {
             position: relative;
             z-index: 1;
         }
+
     }
 
     &.wrap-danger {
@@ -267,9 +289,17 @@ $mdc-sand-hero:   #FFF1CD;
     }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 2560px) {
     .ms-hero-img {
-        margin: 10rem auto 0 auto !important;
+        margin: 2rem auto 0 auto !important;
+        height: 105% !important;
+    }
+}
+
+@media (max-width: 1439px) {
+    .ms-hero-img {
+        margin: 2rem auto 0 auto !important;
+        height: 105% !important;
     }
 
     .carousel-indicators-hero-img {
@@ -279,13 +309,10 @@ $mdc-sand-hero:   #FFF1CD;
 }
 
 @media (max-width: 991px) {
+
     .carousel-indicators-hero-img {
         right: 60px !important;
         bottom: 170px !important;
-    }
-
-    .ms-hero-img {
-        margin: 0 auto 2rem auto !important;
     }
 }
 
@@ -337,85 +364,6 @@ $mdc-sand-hero:   #FFF1CD;
 
 .hero-img-col {
     overflow: hidden;
-}
-
-.ms-hero-img-city {
-    background-image: url('../img/skyline.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.ms-hero-img-city2 {
-    background-image: url('../img/skyline2.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-
-.ms-hero-img-airplane {
-    background-image: url('../img/backAirplane.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.ms-hero-img-team {
-    background-image: url('../img/team2.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.ms-hero-img-mountain {
-    background-image: url('../img/mountain.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.ms-hero-img-coffee {
-    background-image: url('../img/coffee.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.ms-hero-img-meeting {
-    background-image: url('../img/meeting.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.ms-hero-img-keyboard {
-    background-image: url('../img/keyboard.jpg');
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-}
-
-.ms-hero-img-beach {
-    background-image: url('../img/beach.jpg');
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-}
-
-.ms-hero-img-road {
-    background-image: url('../img/road.jpg');
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-}
-
-.ms-hero-img-wall {
-    background-image: url('../img/black_wall.png');
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-}
-
-.ms-hero-img-room {
-    background-image: url('../img/room.jpg');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
 }
 
 .ms-bg-fixed {

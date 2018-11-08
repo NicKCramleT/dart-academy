@@ -1,6 +1,6 @@
 .ms-navbar,
 .ms-lead-navbar {
-    height: 50px;
+    //height: 50px;
     z-index: 1;
     background-color: $color-primary;
     padding: 0;
@@ -34,6 +34,7 @@
                 display: inline-block;
                 margin-right: 10px;
                 margin-top: auto;
+                width: 30%;
             }
 
             .ms-title {

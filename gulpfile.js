@@ -20,10 +20,7 @@ var path =          require('path');
 var runSequence =   require('run-sequence').use(gulp);
 var imagemin =      require('gulp-imagemin');
 var changed =       require('gulp-changed');
-var merge =         require('merge-stream');
 var htmlmin =       require('gulp-htmlmin');
-
-const browsersync   = require('browser-sync');
 
 var config =        require('./gulp/config');
 
@@ -42,8 +39,6 @@ var paths = {
 };
 
 var themeOptions = {
-    primaryColor: argv.color || config.primaryColor,
-    shineColor: argv.shine || config.shine,
     headerClass: argv.header || config.headerClass,
     navbarClass: argv.navbar || config.navbarClass,
     navbarMode: argv.navbarMode || config.navbarMode
@@ -211,42 +206,9 @@ gulp.task('js', function() {
         .pipe(connect.reload());
 });
 
-
-gulp.task('themes', function(cb) {
-    var out = [];
-    for (var color in config.themes) {
-        for (var shine in config.shines) {
-            var color_light = Number(config.shines[shine]) - 100;
-            var color_dark = Number(config.shines[shine]) + 100;
-            out.push(gulp.src(['src/scss/_config.scss'])
-                .pipe(replace('light-blue-400', 'change400'))
-                .pipe(replace('light-blue-500', 'change500'))
-                .pipe(replace('light-blue-600', 'change600'))
-                .pipe(replace('change400', config.themes[color] + '-' + color_light.toString()))
-                .pipe(replace('change500', config.themes[color] + '-' + config.shines[shine]))
-                .pipe(replace('change600', config.themes[color] + '-' + color_dark.toString()))
-                .pipe(replace(' !default', ''))
-                .pipe(rename('_' + config.themes[color] + '-' + config.shines[shine] + '.scss'))
-                .pipe(gulp.dest('src/scss/themes')));
-        }
-    }
-    return merge(out);
-});
-
-function generateNames() {
-    var result = [];
-    for (var color in config.themes) {
-        for (var shine in config.shines) {
-            result.push('' + config.themes[color] + '-' + config.shines[shine]);
-        }
-    }
-    return result;
-}
-
-
 gulp.task('scss', function () {
   gulp.src('src/scss/**/*.scss')
-    .pipe(gulpif(config.allColors, sassThemes('src/scss/themes/_*.scss', generateNames())))
+    .pipe(sassThemes('src/scss/themes/*.scss'))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulpif(config.compress, please({
         "autoprefixer": true,
@@ -322,14 +284,9 @@ gulp.task('connect', function() {
 gulp.task('default', function() {
     config.compress = true;
     config.environment = 'dist';
-    config.allColors = true;
-
-    config.themes = [themeOptions.primaryColor];
-    config.shines = [themeOptions.shineColor];
     
     runSequence(
         'clean',
-        'themes',
         ['plugins', 'html:dist', 'js', 'scss', 'img', 'fonts', 'media', 'revolution'],
         ['connect', 'watch']
     );
@@ -339,10 +296,6 @@ gulp.task('default', function() {
 gulp.task('dist', function() {
     config.compress = true;
     config.environment = 'dist';
-    config.allColors = true;
-
-    config.themes = [themeOptions.primaryColor];
-    config.shines = [themeOptions.shineColor];
 
 
     if(themeOptions.navbarMode) {
@@ -351,19 +304,16 @@ gulp.task('dist', function() {
 
     runSequence(
         'clean',
-        'themes',
         ['plugins', 'html:dist', 'js', 'scss', 'img', 'fonts', 'media', 'revolution']
     );
 });
 
 gulp.task('demo', function() {
-    config.allColors = true;
     config.compress = true;
     config.environment = 'demo';
 
     runSequence(
         'clean',
-        'themes',
         ['plugins', 'html', 'js', 'scss', 'img', 'fonts', 'media', 'revolution']
     );
 });
@@ -385,13 +335,11 @@ gulp.task('work', function() {
 });
 
 gulp.task('release', function() {
-    config.allColors = true;
     config.compress = true;
     config.environment = 'dist';
 
     runSequence(
         'clean',
-        'themes',
         ['plugins', 'html:release', 'js', 'scss', 'img', 'fonts', 'media', 'revolution']
     );
 });

@@ -25,6 +25,11 @@
     text-align: center;
     line-height: 2.2;
 
+    &.no-bg {
+        background-color:  inherit !important;
+        line-height: 0 !important;
+    }
+
     &.color-info {
         color: #fff !important;
         background-color: $color-info;
@@ -59,6 +64,10 @@
         background-color: transparent;
         color: $color-primary;
         border: solid 1px $color-primary;
+
+        &.no-bg {
+            background-color: inherit !important;
+        }
 
         &.color-info {
             background-color: transparent;

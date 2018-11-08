@@ -1,0 +1,13 @@
+
+// Import the fonts for D'Art Academy
+@font-face {
+    font-family: "Lie To Me";
+    src:    url('../fonts/lie-to-me-ttf.ttf') format('truetype'),
+            url('../fonts/lie-to-me-otf.otf') format('otf');
+}
+
+.dart-font {
+    font-family: 'Lie To Me';
+    font-style: normal;
+    font-weight: normal;
+  }

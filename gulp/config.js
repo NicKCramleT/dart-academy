@@ -1,16 +1,11 @@
 module.exports = {
     environment : 'dev',
     concat: true,
-    primaryColor: 'deep-purple',
-    shine: '800',
+    primaryColor: 'dart-academy',
     headerClass: 'ms-header-primary',
     navbarClass: 'ms-navbar-primary',
     navbarMode: false,
-    allColors: false,
     compress: true,
-
-    themes : ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey'],
-    shines : ['300', '400', '500', '600', '700', '800'],
 
     headers : ['header-primary', 'header-dark', 'header-white'],
     navbars : ['navbar-primary', 'navbar-dark', 'navbar-white'],

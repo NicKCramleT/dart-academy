@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+# [0.7.0] - 06-11-2018
+
+### Added
+
+* **theme.dart**: Add new D'Art theme with Michael Desgin template
+* **lietome.font**: Add new Lie To Me font
+* **landing.section**: New section are added to landing page
+
+### Remove
+
+* **not.used**: Not used files remove
+
 # [0.6.0] - 22-10-2018
 
 ### Added

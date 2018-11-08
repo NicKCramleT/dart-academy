@@ -111,6 +111,12 @@ button {
 .color-primary {
     color: $color-primary !important;
 }
+.color-primary-light {
+    color: $color-primary-light !important;
+}
+.color-orange {
+    color: $color-primary-orange !important;
+}
 .color-info {
     color: $color-info !important;
 }
@@ -249,6 +255,25 @@ a.hover-light {
     &.back-show {
         bottom: 20px;
     }
+
+    a {
+        margin: 0 0 1rem 1rem;
+        color: $color-light !important;
+
+        &:hover {
+            background-color: $dart-purple-C9F !important;
+
+            img {
+                transition: all ease 0.4s;
+                transform: rotate(360deg);
+            }
+        }
+
+        &.color-orange {
+            background-color: lighten($dart-yellow-819, 5%);
+            text-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+        }
+    }
 }
 
 .ms-nav-fixed {
@@ -261,4 +286,15 @@ a.hover-light {
 
 .plyr--audio {
     border: solid 1px $color-light-dark;
+}
+
+//D'Art Classes
+.dart-primary {
+    font-family: 'Lie To Me';
+    color: $color-primary;
+}
+
+.dart-yellow {
+    font-family: 'Lie To Me';
+    color: $dart-yellow-819;
 }
