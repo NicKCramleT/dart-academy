@@ -1,8 +1,10 @@
-@import 'variables/material-colors';
+@import '../variables/material-colors';
+@import '../variables/dart-colors';
 
-$color-primary: $mdc-deep-purple-800;
-$color-primary-light: $mdc-deep-purple-700;
-$color-primary-dark: $mdc-deep-purple-900;
+$color-primary: $dart-purple-098;
+$color-primary-light: $dart-purple-C9F;
+$color-primary-dark: $dart-gray-042;
+$color-primary-orange: $dart-yellow-819;
 
 $color-alt: $mdc-blue-grey-500;
 $color-alt-light: $mdc-blue-grey-400;
@@ -71,4 +73,4 @@ $vertical-margin: 20px;
 $vertical-margin-lg: 40px;
 $vertical-margin-sm: 10px;
 
-$color-list: (light: $color-light, dark: $color-dark, primary: $color-primary, info: $color-info, royal: $color-royal, warning: $color-warning, danger: $color-danger, success: $color-success);
+$color-list: (light: $color-light, dark: $color-dark, primary: $color-primary, orange: $color-primary-orange, info: $color-info, royal: $color-royal, warning: $color-warning, danger: $color-danger, success: $color-success);

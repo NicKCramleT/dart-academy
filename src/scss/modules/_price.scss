@@ -39,9 +39,17 @@
         text-align: center;
         color: #fff;
 
+        span, h3{
+            @each $n, $c in $color-list {
+                &.text-color-#{$n} {
+                    color: $c !important;
+                }
+            }
+        }
+
         .price-table-category {
             display: block;
-            background-color: rgba(0,0,0, 0.2);
+            background-color: #fff;
             padding: 1rem 0;
         }
 

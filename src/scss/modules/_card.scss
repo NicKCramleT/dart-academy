@@ -160,6 +160,7 @@
     &:hover,
     &:focus {
         @include shadow-3dp();
+        color: $color-dark-light;
         background-color: $color-light-light;
 
         .ms-icon {

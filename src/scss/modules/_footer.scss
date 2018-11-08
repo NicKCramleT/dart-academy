@@ -16,7 +16,7 @@
 }
 
 .ms-footbar {
-    background-color: $color-alt;
+    background-color: $color-primary;
     color: $color-light-dark;
     position: relative;
     //padding: 2rem 0;
@@ -205,14 +205,20 @@
 .ms-footbar-social {
     a {
         margin: 0 0 1rem 1rem;
-        background-color: $color-alt-dark;
         color: $color-light !important;
 
         &:hover {
-            i {
+            background-color: inherit !important;
+
+            img {
                 transition: all ease 0.4s;
                 transform: rotate(360deg);
             }
+        }
+
+        &.color-orange {
+            background-color: lighten($dart-yellow-819, 5%);
+            text-shadow: 2px 2px 1px rgba(0,0,0,0.2);
         }
     }
 }
@@ -268,6 +274,7 @@
             a {
                 margin-left: 0;
                 margin-right: 1rem;
+                
             }
         }
     }

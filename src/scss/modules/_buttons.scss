@@ -27,6 +27,22 @@
         }
     }
 
+    @each $n, $c in $color-list {
+        &.btn-bg-#{$n} {
+            &:not(.btn-raised) {
+                &:active {
+                    box-shadow: none;
+                    background-color: $c;
+                }
+            }
+
+            &.btn-raised {
+                color: #fff !important;
+                background-color: $c !important;
+            }
+        }
+    }
+
     &.btn-square {
         border-radius: 0 !important;
     }
@@ -826,6 +842,20 @@
 
         &:before {
             background-color: #fff;
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-primary;
+        }
+    }
+
+    &.btn-circle-orange {
+        color: $color-primary;
+        background-color: $color-primary-orange;
+
+        &:before {
+            background-color: $color-primary-orange;
         }
 
         &:hover,
